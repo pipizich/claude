@@ -8,7 +8,7 @@
 }
 
 /* Import JetBrains Mono font */
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Cinzel&display=swap&font-display=swap');
 
 * {
     margin: 0;
@@ -55,7 +55,7 @@ h1 {
     display: flex;
     align-items: center;
     gap: 8px;
-    transition: all 0.3s ease;
+    transition: transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 2px 10px rgba(255, 107, 107, 0.3);
 }
 
@@ -90,6 +90,7 @@ h1 {
 .artwork:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+	will-change: transform; /* Thêm thuộc tính này */
 }
 
 .artwork-container {
@@ -120,8 +121,26 @@ h1 {
     opacity: 1;
 }
 
-.btn-edit, .btn-delete {
-    background-color: rgba(255, 255, 255, 0.9);
+.btn-edit i {
+    color: white; /* Icon màu trắng */
+}
+
+.btn-delete i {
+    color: white; /* Icon màu trắng */
+}
+
+.btn-edit:hover {
+    background-color: #0056b3; /* Xanh đậm hơn khi hover */
+    transform: scale(1.05);
+}
+
+.btn-delete:hover {
+    background-color: #c82333; /* Đỏ đậm hơn khi hover */
+    transform: scale(1.05);
+}
+
+.btn-edit {
+    background-color: #007bff; /* Nền xanh đậm */
     border: none;
     width: 34px;
     height: 34px;
@@ -134,17 +153,18 @@ h1 {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.btn-edit:hover, .btn-delete:hover {
-    background-color: rgba(255, 255, 255, 1);
-    transform: scale(1.05);
-}
-
-.btn-edit i {
-    color: #4a69bd;
-}
-
-.btn-delete i {
-    color: #e55039;
+.btn-delete {
+    background-color: #dc3545; /* Nền đỏ đậm */
+    border: none;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .artwork-info {
